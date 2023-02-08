@@ -1,0 +1,1 @@
+Nesse diretório vai a documentação do software

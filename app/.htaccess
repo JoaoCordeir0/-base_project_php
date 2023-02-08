@@ -1,0 +1,15 @@
+#Protegendo o próprio .htaccess ->
+<files ~ "^.*\.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</files>
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z,0-9,A-Z,_-]+)$ ./$1.php
+
+## Impedindo a listagem de qualquer arquivo e diretório
+Options -Indexes
+
