@@ -1,39 +1,12 @@
-#Protegendo o próprio .htaccess ->
-<files ~ "^.*\.([Hh][Tt][Aa])">
-order allow,deny
-deny from all
-satisfy all
-</files>
-
-<Files ~ "\.txt$">
-    Order allow,deny
-    Deny from all
-</Files>
-<Files ~ "\.md$">
-    Order allow,deny
-    Deny from all
-</Files>
-
-## Impedindo a listagem de qualquer arquivo e diretório
-Options -Indexes
-
+# Ativação do RewriteEngine que nos permite gerenciar as rotas
 RewriteEngine On
-RewriteRule ^(.*)$ app/$1 [L]
 
-## EXPIRES HEADER CACHING ##
-<IfModule mod_expires.c>
-ExpiresActive On
-ExpiresByType image/jpg "access 1 year"
-ExpiresByType image/jpeg "access 1 year"
-ExpiresByType image/gif "access 1 year"
-ExpiresByType image/png "access 1 year"
-ExpiresByType image/svg "access 1 year"
-ExpiresByType text/css "access 1 month"
-ExpiresByType application/pdf "access 1 month"
-ExpiresByType application/javascript "access 1 month"
-ExpiresByType application/x-javascript "access 1 month"
-ExpiresByType application/x-shockwave-flash "access 1 month"
-ExpiresByType image/x-icon "access 1 year"
-ExpiresDefault "access 2 days"
-</IfModule>
-## EXPIRES HEADER CACHING ##
+# Definição da rota principal
+RewriteBase /
+
+# Se o diretório ou arquivos digitados na URL não existirem, seguir a RewriteRule
+RewriteCond %{REQUEST_FILENAME} !-d       
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Rewrite Rule, redirecionar todas as requests para o index.php 
+RewriteRule ^(.+)$ index.php [QSA,L]
