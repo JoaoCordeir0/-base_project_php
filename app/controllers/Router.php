@@ -1,9 +1,7 @@
 <?php
 
 namespace App\controllers 
-{    
-    use App\controllers\Home;
-
+{       
     class Router 
     {
         public function run(string $requestUri)
