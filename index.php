@@ -2,7 +2,12 @@
 
 include "./vendor/autoload.php";
 
-use App\controllers\Router;
+use App\controllers\RouteController;
 
-$router = new Router();
+if (empty($_COOKIE['Language']) || !isset($_COOKIE['Language']))
+{
+    setcookie("Language", 'pt', time() + 3600 * 24, "/");
+}
+
+$router = new RouteController();
 $router->run($_SERVER['REQUEST_URI']);

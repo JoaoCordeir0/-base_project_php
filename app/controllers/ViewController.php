@@ -2,18 +2,13 @@
 
 namespace App\controllers {
     
-    class View 
+    class ViewController
     {
-        public static function getContentView($view)
-        {
-            $file = './app/views/' . $view . '.html';      
-                    
-            return file_exists($file) ? file_get_contents($file) : '';
-        }
-
         public static function render($view, $vars = []){                                    
 
-            $contentView = self::getContentView($view);            
+            $file = './app/views/' . $view . '.html';      
+                    
+            $contentView = file_exists($file) ? file_get_contents($file) : '';             
 
             $keys = array_keys($vars);
             $keys = array_map(function($item){
@@ -24,5 +19,3 @@ namespace App\controllers {
         }
     }
 }
-
-?>
