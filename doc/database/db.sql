@@ -1,5 +1,5 @@
-create database bradcases;
-use bradcases;
+create database mvc_php;
+use mvc_php;
 
 CREATE TABLE texts(
 	id int auto_increment primary key NOT NULL,
