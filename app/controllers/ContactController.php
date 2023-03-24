@@ -4,6 +4,11 @@ namespace App\controllers
 {    
     class ContactController
     {
+        /**
+         * Função responsável por renderizar a página de contato
+         * 
+         * @return RenderViewContact
+         */
         public function pageContact($namePage)
         {   
             $arrayMap = [

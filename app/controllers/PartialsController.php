@@ -4,6 +4,12 @@ namespace App\controllers
 {    
     class PartialsController
     {
+        /**
+         * Função responsável por retornar um array contendo o 
+         * HEAD, HEADER, FOOTER e SCRIPTS que várias páginas utilizam.
+         * 
+         * @return Array
+         */
         public static function partials()
         {   
             $arrayMap = [
@@ -12,9 +18,10 @@ namespace App\controllers
             ];  
 
             return [
-                'head' => ViewController::render('partials/HeadPartials', $arrayMap),
-                'header' => ViewController::render('partials/HeaderPartials', $arrayMap),
-                'footer' => ViewController::render('partials/FooterPartials', $arrayMap)
+                'head'      => ViewController::render('partials/HeadPartials', $arrayMap),
+                'header'    => ViewController::render('partials/HeaderPartials', $arrayMap),
+                'footer'    => ViewController::render('partials/FooterPartials', $arrayMap),
+                'scripts'   => ViewController::render('partials/ScriptsPartials', $arrayMap)
             ];               
         }        
     }

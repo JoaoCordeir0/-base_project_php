@@ -4,6 +4,11 @@ namespace App\controllers
 {    
     class HomeController
     {
+        /**
+         * Função responsável por renderizar a HomePage.
+         * 
+         * @return RenderViewHome
+         */
         public function pageHome($namePage)
         {   
             $arrayMap = [

@@ -4,6 +4,11 @@ namespace App\controllers {
     
     class ViewController
     {
+        /**
+         * Função responsável por renderizar as views.
+         * 
+         * @return View
+         */
         public static function render($view, $vars = []){                                    
 
             $file = './app/views/' . $view . '.html';      

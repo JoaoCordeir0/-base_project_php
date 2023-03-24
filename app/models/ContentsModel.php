@@ -7,6 +7,11 @@ namespace App\models
 
     class ContentsModel
     {
+        /**
+         * Função responsável por buscar o conteúdo HTML e retornar para o controller.
+         * 
+         * @return HTMLContent
+         */
         public function getContent($id)         
         {            
             try

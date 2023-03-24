@@ -6,6 +6,11 @@ namespace App\controllers
 
     class ContentsController 
     {
+        /**
+         * Função responsável por renderizar as páginas dinâmicas de conteúdo.
+         * 
+         * @return RenderViewContents
+         */
         public function pageContents($idContent)
         {   
             $content = new ContentsModel;            
