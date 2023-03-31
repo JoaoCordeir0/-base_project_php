@@ -7,7 +7,7 @@ namespace App\controllers
         /**
          * Função responsável por renderizar a página de contato
          * 
-         * @return RenderViewContact
+         * @return Render
          */
         public function pageContact($namePage)
         {   

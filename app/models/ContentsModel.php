@@ -24,7 +24,7 @@ namespace App\models
                            
                 if ($result = $getContent->fetch())
                 {
-                    switch($_COOKIE['Language'])
+                    switch($_SESSION['Language'])
                     {
                         case 'pt': return [$result['title_pt'], $result['body_pt']]; break;
                         case 'en': return [$result['title_en'], $result['body_en']]; break;

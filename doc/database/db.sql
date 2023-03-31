@@ -1,12 +1,12 @@
-create database mvc_php;
-use mvc_php;
+create database bradcases;
+use bradcases;
 
 CREATE TABLE texts(
 	id int auto_increment primary key NOT NULL,
-	title varchar(50) NULL,
-	nome_ingles varchar(50) NULL,
-	body text NULL,
-	body_ingles text NULL	
+	title_pt varchar(50) NULL,
+	title_en varchar(50) NULL,
+	body_pt text NULL,
+	body_en text NULL	
 );
 
 

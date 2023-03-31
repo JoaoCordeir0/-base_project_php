@@ -40,21 +40,18 @@ namespace App\routes
          * @return View
          */
         protected function home()
-        {
-            $home = new HomeController;
-            $home->pageHome('HomeView');            
+        {            
+            (new HomeController)->pageHome('HomeView');            
         }
        
         protected function contact()
-        {
-            $contact = new ContactController;
-            $contact->pageContact('ContactView');            
+        {            
+            (new ContactController)->pageContact('ContactView');            
         }
 
         protected function about()
-        {            
-            $about = new ContentsController;
-            $about->pageContents(1); // Id do conteúdo que está no banco           
+        {                        
+            (new ContentsController)->pageContents(1); // Id do conteúdo que está no banco           
         }
 
 

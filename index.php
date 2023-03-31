@@ -4,10 +4,9 @@ include "./vendor/autoload.php";
 
 use App\routes\Routes;
 
-if (empty($_COOKIE['Language']) || !isset($_COOKIE['Language']))
+if (!isset($_SESSION['Language']))
 {
-    setcookie("Language", 'pt', time() + 3600 * 24, "/");
+    $_SESSION['Language'] = 'pt';
 }
 
-$router = new Routes();
-$router->run($_SERVER['REQUEST_URI']);
+(new Routes())->run($_SERVER['REQUEST_URI']);

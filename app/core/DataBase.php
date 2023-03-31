@@ -6,7 +6,7 @@ namespace App\core
     
     class DataBase extends PDO
     {
-        protected $dsn = "mysql:host=localhost; dbname=bradcases; charset=utf8;";
+        protected $dsn = "mysql:host=localhost; dbname=app_teste; charset=utf8;";
         protected $username = "root";
         protected $password = "";
         protected $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');

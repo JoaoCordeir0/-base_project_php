@@ -9,12 +9,11 @@ namespace App\controllers
         /**
          * Função responsável por renderizar as páginas dinâmicas de conteúdo.
          * 
-         * @return RenderViewContents
+         * @return Render
          */
         public function pageContents($idContent)
-        {   
-            $content = new ContentsModel;            
-            $result = $content->getContent($idContent);
+        {           
+            $result = (new ContentsModel)->getContent($idContent);
 
             $arrayMap = [
                 'title' => $result[0],

@@ -13,8 +13,7 @@ namespace App\controllers
         public static function partials()
         {   
             $arrayMap = [
-                // variáveis das partials
-                'journalName' => 'Critical Care Science'                          
+                // variáveis das partials                         
             ];  
 
             return [
